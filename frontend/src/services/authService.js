@@ -1,7 +1,9 @@
-import apiClient from './apiClient'
+import api from './api'
 
 export const authService = {
-  login: (credentials) => apiClient.post('/auth/login', credentials),
-  register: (payload) => apiClient.post('/auth/register', payload),
-  me: () => apiClient.get('/auth/me'),
+  register: (payload) => api.post('/auth/register', payload),
+  verifyRegisterOtp: (payload) => api.post('/auth/verify-register-otp', payload),
+  login: (credentials) => api.post('/auth/login', credentials),
+  verifyLoginOtp: (payload) => api.post('/auth/verify-login-otp', payload),
+  profile: () => api.get('/auth/profile'),
 }

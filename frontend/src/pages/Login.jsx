@@ -31,7 +31,8 @@ function Login() {
     setError('')
     try {
       await login(values)
-      navigate(from, { replace: true })
+      toast.success('OTP sent to your email. Please verify to continue.')
+      navigate(ROUTES.VERIFY_LOGIN, { state: { email: values.email } })
     } catch (requestError) {
       const message = requestError.message || 'Unable to sign in'
       setError(message)

@@ -35,7 +35,8 @@ function Register() {
         email: values.email,
         password: values.password,
       })
-      navigate(ROUTES.LOGIN)
+      toast.success('Account created. Check your email for OTP.')
+      navigate(ROUTES.VERIFY_REGISTER, { state: { email: values.email } })
     } catch (requestError) {
       const message = requestError.message || 'Unable to create account'
       setError(message)

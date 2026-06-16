@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { API_TIMEOUT, AUTH_STORAGE_KEY } from '../constants/app'
-import { getStoredAuth } from '../utils/storage'
+import { getStoredAuth } from '../utils/tokenStorage'
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
